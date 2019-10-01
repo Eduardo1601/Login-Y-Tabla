@@ -6,8 +6,8 @@
      <input type="text" name="Apllido" v-model="apellido" placeholder="Apellido" />
     <input type="number" name="DPI" v-model="dpi" placeholder="DPI"/>
     <input type="email" name="Email" v-model="email" placeholder="Email" />
-    <button @click="cancelar()">Cancelar</button>
-    <button @click="agregar()">Enviar</button>
+    <button id="1" @click="cancelar()">Cancelar</button>
+    <button id="2" @click="agregar()">Enviar</button>
     </div>
     </div>
     </div>
@@ -53,19 +53,21 @@ export default {
 </script>
 <style>
 html, body { background: gray; padding: 0px; margin: 0px; width: 100%; height: 100vh; font-family: "Roboto"; color:#333;  }
-.divlogin{ 
+.divlogin { 
   background: gray;
-    background-size: cover; 
-    background-position: center center; 
+    background-size: ; 
+    background-position:  center; 
     width: 100%; 
     height: 100vh; 
     display: flex;
-    align-content: center;
-    align-items: center;    
+    align-content: ;
+    align-items:;
+    
 }
-.divlogin .container{ 
+.divlogin .container { 
     width: 100%;
     text-align: center;
+     
 }
 .divlogin .container .divcont{
     width: 100%;

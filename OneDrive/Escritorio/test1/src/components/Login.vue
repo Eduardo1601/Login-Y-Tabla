@@ -65,7 +65,7 @@ html,body{ padding: 0px; margin: 0px; width: 100%; height: 100vh; font-family: "
     align-content: center;
     align-items: center;    
 }
-.divlogin .container{ 
+.divlogin .container { 
     width: 100%;
     text-align: center;
 }

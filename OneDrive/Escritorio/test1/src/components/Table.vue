@@ -1,44 +1,50 @@
 <template>
     <div>
+    <div class="dis">
    <button @click="Refrescar()">Refrescar</button>
  <button @click="logout()">Logout</button>
     <button @click="nuevo()">nuevo</button>
-<table border="1" align="center"  bordercolor="white" cellspacing="0">
-    <th class="volor" width="150" height="30" bgcolor="48A5E6">
+<table border="1" align="center"  bordercolor="6F6F6F" cellspacing="0">
+    <th class="volor" width="150" height="30" bgcolor="FFFFFF">
         IdEmpleado
         </th>
-        <th class="volor" width="150" height="35" bgcolor="48A5E6" >
+        <th class="volor" width="150" height="35" bgcolor="FFFFFF" >
         nombre
         </th>
-         <th class="volor" width="150" height="35" bgcolor="48A5E6">
+         <th class="volor" width="150" height="35" bgcolor="FFFFFF">
         apellido
         </th >
-         <th class="volor" width="150" height="35" bgcolor="48A5E6">
+         <th class="volor" width="150" height="35" bgcolor="FFFFFF">
         dpi
         </th>
-         <th class="volor" width="150" height="35" bgcolor="48A5E6">
+         <th class="volor" width="150" height="35" bgcolor="FFFFFF">
         email
         </th>
 
         
     <tr v-for="todo in todos" :key="todo.idEmpleado">
         
-        <td bgcolor="D8EFFF" > {{todo.idEmpleado}}
+        <td bgcolor="E5DCDC" > {{todo.idEmpleado}}
         </td>
-         <td bgcolor="91D6F1">{{todo.nombre}}
+         <td bgcolor="CCC9C9">{{todo.nombre}}
         </td>
-        <td bgcolor="D8EFFF">{{todo.apellido}}
+        <td bgcolor="E5DCDC">{{todo.apellido}}
         </td>
-        <td bgcolor="91D6F1">{{todo.dpi}}
+        <td bgcolor="CCC9C9">{{todo.dpi}}
         </td>
-        <td bgcolor="D8EFFF">{{todo.email}}
+        <td bgcolor="E5DCDC">{{todo.email}}
         </td>
         <td class="btn">
         <button class="btn" @click="deleteEmpleado(todo.idEmpleado)">Borrar</button>
         </td>     
             </tr>
+            
      </table>
      </div>
+
+     </div>
+
+     
  </template>
 <script>
 import axios from 'axios'
@@ -95,3 +101,28 @@ export default {
     }
 }
 </script>
+
+
+
+
+<style>
+
+
+
+
+.dis{
+
+ width: 100%;
+    max-width: 1000px;
+    background: rgba(255,255,255,0.7);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    
+}
+
+
+
+
+
+</style>
