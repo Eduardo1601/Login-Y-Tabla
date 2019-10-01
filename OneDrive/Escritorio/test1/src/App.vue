@@ -1,15 +1,17 @@
 <template>
   <div id="app">
     <Login @click_login="status=1" v-if="status==0"></Login>
-    <Table @logout="status=0" v-else-if="status==1"></Table>
-
+    <Table @logout="status=0" @nuevo="status=2" @click_agregar="statu=0" v-if="status==1"></Table>
+    <Registro @cancelar="status=1" @agregar="status=1" v-if="status==2"></Registro>
+    
   </div>
 </template>
 
 <script>
-import Table from './components/Table.vue'
-import Login from './components/Login.vue'
-import HelloWorld from './components/HelloWorld.vue'
+import Table from './components/Table.vue';
+import Login from './components/Login.vue';
+import HelloWorld from './components/HelloWorld.vue';
+import Registro from './components/Registro.vue';
 
 export default {
   name: 'app',
@@ -17,7 +19,8 @@ export default {
     // eslint-disable-next-line 
     HelloWorld,
     Table,
-    Login
+    Login,
+    Registro
   },
   data(){
     return {
