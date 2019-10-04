@@ -1,51 +1,77 @@
+
 <template>
+<div>
+       <div class="dis">
+       <div class="login">
+       <div class="tainer">
+       <div class="cont">
+       <div class="cuatro">
+       <table>
+          <td>
+         <button class="trece"  @click="Refrescar()">Refrescar</button>
+         </td>
+         <button class="catorce" @click="nuevo()">Agregar Empleado</button>    
+         <button class="quince" @click="tablas()"> Ver Tabla de Solicitudes </button>
+    <button class="nueve" @click="aceptar()">Solicitud</button>
+    <button class="diez" @click="logout()">Logout</button>
+    
+    </table>
+    </div>
     <div>
-    <div class="dis">
-   <button @click="Refrescar()">Refrescar</button>
- <button @click="logout()">Logout</button>
-    <button @click="nuevo()">nuevo</button>
-<table border="1" align="center"  bordercolor="6F6F6F" cellspacing="0">
-    <th class="volor" width="150" height="30" bgcolor="FFFFFF">
+    </div>
+    <br>
+    <br>
+<table class="Hehe" border="1" align="center"  bordercolor="6F6F6F" cellspacing="0">
+    <th class="volor" width="150" height="30" bgcolor="82E0AA">
         IdEmpleado
         </th>
-        <th class="volor" width="150" height="35" bgcolor="FFFFFF" >
-        nombre
+        <th class="volor" width="150" height="30" bgcolor="82E0AA">
+        Nombre
         </th>
-         <th class="volor" width="150" height="35" bgcolor="FFFFFF">
-        apellido
-        </th >
-         <th class="volor" width="150" height="35" bgcolor="FFFFFF">
-        dpi
+        <th class="volor" width="150" height="30" bgcolor="82E0AA">
+        Apellido
         </th>
-         <th class="volor" width="150" height="35" bgcolor="FFFFFF">
-        email
+        <th class="volor" width="150" height="30" bgcolor="82E0AA">
+        Dpi
+        </th>
+        <th class="volor" width="150" height="30" bgcolor="82E0AA">
+        Email
+        </th>
+         <th class="volor" width="150" height="30" bgcolor="82E0AA">
+        Días
+        </th> <th class="volor" width="150" height="30" bgcolor="82E0AA">
+            Eliminar 
         </th>
 
         
     <tr v-for="todo in todos" :key="todo.idEmpleado">
         
-        <td bgcolor="E5DCDC" > {{todo.idEmpleado}}
+        <td bgcolor="82E0AA" > {{todo.idEmpleado}}
         </td>
-         <td bgcolor="CCC9C9">{{todo.nombre}}
+         <td bgcolor="white">{{todo.nombre}}
         </td>
-        <td bgcolor="E5DCDC">{{todo.apellido}}
+        <td bgcolor="white">{{todo.apellido}}
         </td>
-        <td bgcolor="CCC9C9">{{todo.dpi}}
+        <td bgcolor="white">{{todo.dpi}}
         </td>
-        <td bgcolor="E5DCDC">{{todo.email}}
+        <td bgcolor="white">{{todo.email}}
         </td>
-        <td class="btn">
+        <td bgcolor="white">{{todo.diasDisponibles}}
+        </td>
+
+        <div class="tres">
+        <td>
         <button class="btn" @click="deleteEmpleado(todo.idEmpleado)">Borrar</button>
-        </td>     
+        </td>
+        </div>
             </tr>
-            
      </table>
      </div>
-
      </div>
-
-     
- </template>
+     </div>
+    </div>
+    </div>
+</template>
 <script>
 import axios from 'axios'
 export default {
@@ -70,6 +96,18 @@ export default {
           $DPI = $_POST['DPI'];
           $Email= $_POST['Email'];
             */
+        },
+        aceptar(){
+           this.$emit("aceptar");
+        },
+        agregado(){
+           this.$emit("agregado");
+        },
+        denegado(){
+           this.$emit("denegado");
+        },
+        tablas(){
+           this.$emit("tablas");
         },
         getTodos(){
             axios 
@@ -106,23 +144,173 @@ export default {
 
 
 <style>
+.cuatro {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
 
+li {
+  float: left;
+}
 
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
 
+li a:hover {
+  background-color: #4CAF50;
+}
 
-.dis{
+.active {
+  background-color: #0F7EE1;
+}
 
- width: 100%;
-    max-width: 1000px;
-    background: rgba(255,255,255,0.7);
-    padding: 20px;
-    border-radius: 10px;
-    display: inline-block;
-    
+.GRIPE {
+  background-color: #0F7EE1;
+}
+
+.TOS {
+  background-color: #0F7EE1;
 }
 
 
+.catorce
+{
+background: #82E0AA ;
+}
+
+.quince{
+    background: #82E0AA ;
+}
+
+.nueve{
+    background: #82E0AA ;
+}
+
+.diez{
+    background: #82E0AA ;
+}
+
+.dos {
+width: 30%;
+    max-width: 300px;
+    background: ;
+    padding: 20px;
+    border-radius: 10px;
+    
+    
+},
+ .btn {
+    background: blue;
+}
+
+button, th,  {
+    align:center;
+    right: 20px;
+border-radius: 10px;
+align:center;
+}
+
+.dis{
+
+ width: 200%;
+    max-width: 1300px;
+    background:black;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    align-items: center;
+},
+
+.login .tainer .cont{
+    width: 6%;
+    max-width: 5px;
+    text-align: center center; 
+}
 
 
+.login .tainer .cont input.error, {    
+    padding: 5px 6px;
+    background: #0F7EE1;
+    color: #;
+    text-align: center;
+}
+table {
+  font-family: Verdana;
+  border-collapse: collapse;
+  width: 80%;
+}
 
+td, th, table{
+  border: 0px solid #dddddd;
+  text-align: left;
+  padding: 12px;
+  text-align: center;
+  font-family: Tahoma;
+  font-size: 27px;
+}
+
+tr:nth-child(even), .tres{
+  background-color:;
+}
+.cuatro {
+  list-style-type: none;
+  margin:;
+  padding:;
+  overflow: hidden;
+  background-color:rgb(60,60,60);
+  
+}
+
+.cuatro {
+  float: ;
+}
+
+
+button a:hover {
+  background-color: black;
+}
+
+body {margin:0;}
+
+  .cuatro {
+  list-style-type: none;
+  margin: ;
+  padding: ;
+  overflow: hidden;
+  background-color: ;
+  position:fixed;
+  top: 0;
+}
+
+ .trece {
+ background-color: #0F7EE1;
+}
+
+button {
+  float: left;
+}
+
+.cuatro button{
+  display: block;
+  color: black;
+  text-align: center;
+  padding: ;
+  text-decoration: none;
+}
+
+button a:hover:not(.active) {
+  background-color: black;
+}
+
+.cuatro {
+  background-color: ; 
+}
 </style>

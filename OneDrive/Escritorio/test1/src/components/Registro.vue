@@ -6,8 +6,15 @@
      <input type="text" name="Apllido" v-model="apellido" placeholder="Apellido" />
     <input type="number" name="DPI" v-model="dpi" placeholder="DPI"/>
     <input type="email" name="Email" v-model="email" placeholder="Email" />
+    <input type="number" name="dias" v-model="dias" placeholder="Días">   
+    <table>
+    <td>
     <button id="1" @click="cancelar()">Cancelar</button>
+    </td>
+    <td>
     <button id="2" @click="agregar()">Enviar</button>
+     </td>
+    </table>
     </div>
     </div>
     </div>
@@ -23,6 +30,7 @@ export default {
             apellido:"",
             dpi:"",
             email:"",
+            dias:"",
         }
     }, 
     mounted (){
@@ -37,7 +45,8 @@ export default {
           nombre:this.nombre,
           apellido:this.apellido,
           dpi:this.dpi,
-          email:this.email
+          email:this.email,
+          dias:this.dias
             })
             .then(response => {
                // this.getTodos()
@@ -54,7 +63,7 @@ export default {
 <style>
 html, body { background: gray; padding: 0px; margin: 0px; width: 100%; height: 100vh; font-family: "Roboto"; color:#333;  }
 .divlogin { 
-  background: gray;
+  background: black;
     background-size: ; 
     background-position:  center; 
     width: 100%; 

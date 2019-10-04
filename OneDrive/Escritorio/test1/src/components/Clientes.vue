@@ -1,74 +1,66 @@
-<html>
-<body>
-<p>
-<img src="/assets/{{Esource.png}}" class="img-responsive" height="70" width="90">
-
-</p>
-</body>
-</html>
-
 <template>
-  <div id="login">
+   <div id="login">
   <div class="divlogin">
         <div class="container">
             <div class="divcont">
-    <label>Usuario:</label> 
-    <input type="text" name="Usuario" v-model="usuario" placeholder="Usuario" />
-    <br>
-    <label>Contraseña:</label> 
-    <input type="password" name="password" v-model="password" placeholder="Password" />
-    <button @click="login()">Entrar</button>
-    <label v-if="response==1">
-     Usuario y/o Contraseña incorrecta
-    </label>
-  </div>
-  </div>
-  </div>
-  </div>
+ <input type="number" name="id" v-model="id" placeholder="ID" />
+    <input type="number" name="fecha" v-model="dias" placeholder="Dias" />
+    <table>
+    <td>
+    <button @click="enviar()">Registrar</button>   
+    </td>
+    <td>  
+     <button @click="regresar()">Regresar</button>  
+    </td>
+    </table>
+    </div>
+    </div>    
+ </div>
+    </div>
 
 </template>
-
 <script>
 import axios from 'axios'
 export default {
-  name: 'Login',
-  data(){
-    return {
-      response:"",
-      usuario: "",
-      password: ""
-    }
-  },
-  methods:{
-    login(){
-      // eslint-disable-next-line
-      console.log("Entrar");
-      axios.post('http://localhost:3000/login',{
-          username:this.usuario,
-          password:this.password
-      })
-      .then(response => {
-        // eslint-disable-next-line 
+     name: 'Clientes',
+    data(){
+        return{
+            id:"",
+            nombre:"",
+            apellido:"",
+            email:"",
+            dias:"",
+
+        }
+    }, 
+    methods:{
+        regresar(){
+            this.$emit("regresar");
+        },
+         enviar(){           
+          if(this.id==""|| this.dias==""  ){
+              // eslint-disable-next-line
+              console.log('rellena todos los campos')
+          }else{
+          this.$emit("enviar");
+          axios.post('http://localhost:3000/crearSolicitud/'+this.id,{
+          nombre:this.nombre,
+          apellido:this.apellido,
+          email:this.email,
+          dias:this.dias
+            })
+           .then(response => {
+        // eslint-disable-next-line
         console.log(response.data)
-        if (response.data == "ok"){
-          this.$emit('click_login');
-        }
-        else if(response.data == "error"){
-          // eslint-disable-next-line 
-          this.response=1
-        }
       }).catch(e => {
       this.errors.push(e)
-    })
+    })           
+        }
+      }
     }
-  }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-
+<style>
 html,body{ padding: 0px; margin: 0px; width: 100%; height: 100vh; font-family: "Roboto"; color:#333;  }
 .divlogin{ 
   background: black;
@@ -87,7 +79,7 @@ html,body{ padding: 0px; margin: 0px; width: 100%; height: 100vh; font-family: "
 .divlogin .container .divcont{
     width: 100%;
     max-width: 300px;
-    background: #;
+    background: green;
     padding: 20px;
     border-radius: 10px;
     display: inline-block;
@@ -112,7 +104,7 @@ html,body{ padding: 0px; margin: 0px; width: 100%; height: 100vh; font-family: "
     display: block; 
     margin: auto; 
     padding: 10px 30px;
-    background: #black;
+    background: #333;
     color:#fff;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -120,9 +112,8 @@ html,body{ padding: 0px; margin: 0px; width: 100%; height: 100vh; font-family: "
 .divlogin .container .divcont a{
     font-size: 12px;
     margin-right: 10px;
-    color:black;
+    color:#333;
 }
-
 h3 {
   margin: 40px 0 0;
 }
@@ -137,4 +128,5 @@ li {
 a {
   color: #42b983;
 }
+
 </style>
