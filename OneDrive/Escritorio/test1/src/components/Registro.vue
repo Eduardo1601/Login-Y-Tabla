@@ -61,7 +61,7 @@ export default {
 }
 </script>
 <style>
-html, body { background: gray; padding: 0px; margin: 0px; width: 100%; height: 100vh; font-family: "Roboto"; color:#333;  }
+html, body { background: ; padding: 0px; margin: 0px; width: 100%; height: 100vh; font-family: "Roboto"; color:#333;  }
 .divlogin { 
   background: black;
     background-size: ; 

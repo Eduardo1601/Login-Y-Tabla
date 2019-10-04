@@ -69,9 +69,9 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-html,body{ padding: 0px; margin: 0px; width: 100%; height: 100vh; font-family: "Roboto"; color:#333;  }
+html,body{ background: white; padding: 0px; margin: 0px; width: 100%; height: 100vh; font-family: "Roboto"; color:#333;  }
 .divlogin{ 
-  background: black;
+  background:white ;
     background-size: cover; 
     background-position: center center; 
     width: 100%; 
@@ -87,7 +87,7 @@ html,body{ padding: 0px; margin: 0px; width: 100%; height: 100vh; font-family: "
 .divlogin .container .divcont{
     width: 100%;
     max-width: 300px;
-    background: #;
+    background: #black;
     padding: 20px;
     border-radius: 10px;
     display: inline-block;
@@ -112,8 +112,8 @@ html,body{ padding: 0px; margin: 0px; width: 100%; height: 100vh; font-family: "
     display: block; 
     margin: auto; 
     padding: 10px 30px;
-    background: #black;
-    color:#fff;
+    background: black;
+    color:;
     border-radius: 5px;
     margin-bottom: 10px;
 }

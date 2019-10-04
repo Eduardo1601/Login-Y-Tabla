@@ -41,9 +41,9 @@ export default {
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: black;
   text-align: center;
-  color: #2c3e50;
+  color: ##bfb9bf;
   margin-top: 60px;
 }
 

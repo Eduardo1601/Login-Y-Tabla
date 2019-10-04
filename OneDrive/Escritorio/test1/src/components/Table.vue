@@ -1,4 +1,10 @@
-
+<html>
+<body>
+<p>
+<img src="/assets/{{Esource.png}}" class="img-responsive" height="70" width="90">
+</p>
+</body>
+</html>
 <template>
 <div>
        <div class="dis">
@@ -48,15 +54,15 @@
         
         <td bgcolor="82E0AA" > {{todo.idEmpleado}}
         </td>
-         <td bgcolor="white">{{todo.nombre}}
+         <td bgcolor="#C5C3C3">{{todo.nombre}}
         </td>
-        <td bgcolor="white">{{todo.apellido}}
+        <td bgcolor="#C5C3C3">{{todo.apellido}}
         </td>
-        <td bgcolor="white">{{todo.dpi}}
+        <td bgcolor="#C5C3C3">{{todo.dpi}}
         </td>
-        <td bgcolor="white">{{todo.email}}
+        <td bgcolor="#C5C3C3">{{todo.email}}
         </td>
-        <td bgcolor="white">{{todo.diasDisponibles}}
+        <td bgcolor="#C5C3C3">{{todo.diasDisponibles}}
         </td>
 
         <div class="tres">
@@ -144,12 +150,17 @@ export default {
 
 
 <style>
+
+html,body { 
+  background:white;  padding: 0px; margin: 0px; width: 100%;  height: 100vh;  font-family: "Roboto";   color:#333; }
+
 .cuatro {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: black;
+  background-color: ;
+
 }
 
 li {
@@ -158,14 +169,14 @@ li {
 
 li a {
   display: block;
-  color: white;
+  color: black;
   text-align: center;
   padding: 14px 20px;
   text-decoration: none;
 }
 
 li a:hover {
-  background-color: #4CAF50;
+  background-color: black;
 }
 
 .active {
@@ -201,7 +212,7 @@ background: #82E0AA ;
 .dos {
 width: 30%;
     max-width: 300px;
-    background: ;
+    background:  ;
     padding: 20px;
     border-radius: 10px;
     
@@ -222,7 +233,7 @@ align:center;
 
  width: 200%;
     max-width: 1300px;
-    background:black;
+    background:#;
     padding: 10px;
     border-radius: 5px;
     display: inline-block;
@@ -233,12 +244,13 @@ align:center;
     width: 6%;
     max-width: 5px;
     text-align: center center; 
+
 }
 
 
 .login .tainer .cont input.error, {    
     padding: 5px 6px;
-    background: #0F7EE1;
+    background-color: white;
     color: #;
     text-align: center;
 }
@@ -246,18 +258,20 @@ table {
   font-family: Verdana;
   border-collapse: collapse;
   width: 80%;
+
 }
 
 td, th, table{
   border: 0px solid #dddddd;
   text-align: left;
   padding: 12px;
+    border-radius: 5px;
   text-align: center;
   font-family: Tahoma;
   font-size: 27px;
 }
 
-tr:nth-child(even), .tres{
+tr:nth-child(even),{
   background-color:;
 }
 .cuatro {
@@ -265,8 +279,7 @@ tr:nth-child(even), .tres{
   margin:;
   padding:;
   overflow: hidden;
-  background-color:rgb(60,60,60);
-  
+  background-color:rgb(60.60.60);
 }
 
 .cuatro {
@@ -275,7 +288,7 @@ tr:nth-child(even), .tres{
 
 
 button a:hover {
-  background-color: black;
+  background-color: white;
 }
 
 body {margin:0;}
@@ -291,7 +304,7 @@ body {margin:0;}
 }
 
  .trece {
- background-color: #0F7EE1;
+ background-color:#0F7EE1;
 }
 
 button {

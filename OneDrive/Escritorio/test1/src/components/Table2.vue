@@ -9,20 +9,21 @@
           <li><a></a></li>
           <li><a></a></li>
           <li><a></a></li>
+                 <li><a></a></li>
           <li><a></a></li>
-          <li><a></a></li>
-          <li><a></a></li>
-          <li><a></a></li>
-          <li><a></a></li>
-          <li><a></a></li>
+                    <li><a></a></li>
+                    <li><a></a></li>
+           <li><a></a></li>
           <li><a></a></li>
           <li><a></a></li>
           <li><a></a></li>
           <li><a></a></li>
               <li><a></a></li>
-          <button @click="Refrescar()">Refrescar</button>
-          <button @click="regresar()">Regresar</button>
-       </th>
+              <div>
+          <button  class="celula" @click="Refrescar()">Refrescar</button>
+          <button  class="celula" @click="regresar()">Regresar</button>
+          </div>
+    </th>
        </table>
        </div>
     </div>
@@ -52,15 +53,15 @@
         
         <td bgcolor="82E0AA" > {{todo.idSolicitud}}
         </td>
-         <td bgcolor="white">{{todo.nombre}}
+         <td bgcolor="#C5C3C3">{{todo.nombre}}
         </td>
-        <td bgcolor="white">{{todo.apellido}}
+        <td bgcolor="#C5C3C3">{{todo.apellido}}
         </td>
-        <td bgcolor="white">{{date(todo.fecha)}}
+        <td bgcolor="#C5C3C3">{{date(todo.fecha)}}
         </td>
-        <td bgcolor="white">{{todo.diasSolicitados}}
+        <td bgcolor="#C5C3C3">{{todo.diasSolicitados}}
         </td>
-        <td bgcolor="white">{{todo.status}}
+        <td bgcolor="#C5C3C3">{{todo.status}}
         </td>
         <td>
         <button class="btn" @click="deleteSolicitud(todo.idSolicitud)">Borrar</button>
@@ -127,11 +128,28 @@ export default {
 </script>
 
 <style>
-button, th, td {
+button, th, td, .celula {
     align:center;
     right: 20px;
 border-radius: 0px;
 align:center;
+}
+
+
+.celula{
+  border: 0px solid #dddddd;
+  text-align: right;
+  padding: 12px;
+  border-radius: 5px;
+  text-align: center;
+  font-family: Tahoma;
+  font-size: 20px;
+background: #82E0AA ;
+  display: block;
+  color: ;
+  text-align: center;
+  padding: ;
+  text-decoration: none;
 }
 
 .cuatro {
@@ -139,7 +157,7 @@ align:center;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: black;
+  background-color:;
 }
 
 td, th, table{
@@ -150,14 +168,14 @@ td, th, table{
 }
 
 tr:nth-child(even), .tres{
-  background-color:;
+  background-color: ;
 }
 .cuatro {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #;
+  background-color: ;
 }
 
 .cuatro {
@@ -166,7 +184,7 @@ tr:nth-child(even), .tres{
 
 
 button a:hover {
-  background-color: black;
+  background-color: ;
 }
 
 body {margin:0;}
@@ -176,7 +194,7 @@ body {margin:0;}
   margin:;
   padding:;
   overflow: hidden;
-  background-color: ;
+  background-color:;
   position:fixed;
   top: 0;
   width: 75%;
@@ -188,7 +206,7 @@ button {
 
 .cuatro button{
   display: block;
-  color: black;
+  color: ;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -223,7 +241,7 @@ tr:nth-child(even), {
   margin:;
   padding:;
   overflow: hidden;
-  background-color:rgb(60,60,60);
+  background-color:;
   
 }
 button, {
@@ -239,11 +257,11 @@ align:center;
     display: block; 
     margin: auto; 
     padding: 10px 30px;
-    background: #333;
-    color:#fff;
+    background: ;
+    color:;
     border-radius: 5px;
     margin-bottom: 10px;
   background-color: #FF4343;
-   color: black;
+   color: ;
 }
 </style>
