@@ -14,6 +14,10 @@
     </td>
     </table>
     </div>
+    <br>
+    <br>
+    <label style="color:black" v-if="status==1">No tiene dias suficientes para crear la solicitud</label>
+    <label style="color:black" v-if="status==2">El empleado no existe, intente con otro</label>
     </div>    
  </div>
     </div>
@@ -25,6 +29,7 @@ export default {
      name: 'Clientes',
     data(){
         return{
+            status:0,
             id:"",
             nombre:"",
             apellido:"",
@@ -42,7 +47,6 @@ export default {
               // eslint-disable-next-line
               console.log('rellena todos los campos')
           }else{
-          this.$emit("enviar");
           axios.post('http://localhost:3000/crearSolicitud/'+this.id,{
           nombre:this.nombre,
           apellido:this.apellido,
@@ -50,6 +54,13 @@ export default {
           dias:this.dias
             })
            .then(response => {
+             if(response.data=='error'){
+               this.status=1
+             }else if(response.data=='el empleado no existe'){
+               this.status=2
+             }else{
+                this.$emit("enviar");
+             }
         // eslint-disable-next-line
         console.log(response.data)
       }).catch(e => {
@@ -61,9 +72,9 @@ export default {
 }
 </script>
 <style>
-html,body{ padding: 0px; margin: 0px; width: 100%; height: 100vh; font-family: "Roboto"; color:#333;  }
+html,body{ background: white; padding: 0px; margin: 0px; width: 100%; height: 100vh; font-family: "Roboto"; color:#333;  }
 .divlogin{ 
-  background: black;
+  background: white;
     background-size: cover; 
     background-position: center center; 
     width: 100%; 

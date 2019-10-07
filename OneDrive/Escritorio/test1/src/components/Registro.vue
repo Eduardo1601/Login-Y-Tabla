@@ -40,7 +40,6 @@ export default {
             this.$emit("cancelar");
         },
         agregar(){
-           this.$emit("agregar");
              axios.post('http://localhost:3000/agregarEmpleado',{
           nombre:this.nombre,
           apellido:this.apellido,
@@ -52,6 +51,7 @@ export default {
                // this.getTodos()
                // eslint-disable-next-line 
                 console.log(response.data)
+                this.$emit("agregar");
             }).catch(e => {
                 // eslint-disable-next-line 
                 console.log(e)

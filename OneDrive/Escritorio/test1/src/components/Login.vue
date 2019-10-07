@@ -2,12 +2,11 @@
 <body>
 <p>
 <img src="/assets/{{Esource.png}}" class="img-responsive" height="70" width="90">
-
 </p>
 </body>
-</html>
-
+   </html>
 <template>
+<h1>Login</h1>
   <div id="login">
   <div class="divlogin">
         <div class="container">
@@ -44,7 +43,7 @@ export default {
       // eslint-disable-next-line
       console.log("Entrar");
       axios.post('http://localhost:3000/login',{
-          username:this.usuario,
+          usuario:this.usuario,
           password:this.password
       })
       .then(response => {

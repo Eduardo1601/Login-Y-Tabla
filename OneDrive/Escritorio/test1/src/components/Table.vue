@@ -13,9 +13,8 @@
        <div class="cont">
        <div class="cuatro">
        <table>
-          <td>
-         <button class="trece"  @click="Refrescar()">Refrescar</button>
-         </td>
+       <div>
+       </div>
          <button class="catorce" @click="nuevo()">Agregar Empleado</button>    
          <button class="quince" @click="tablas()"> Ver Tabla de Solicitudes </button>
     <button class="nueve" @click="aceptar()">Solicitud</button>
@@ -27,6 +26,7 @@
     </div>
     <br>
     <br>
+    <h1>Empleados</h1>
 <table class="Hehe" border="1" align="center"  bordercolor="6F6F6F" cellspacing="0">
     <th class="volor" width="150" height="30" bgcolor="82E0AA">
         IdEmpleado
@@ -50,9 +50,9 @@
         </th>
 
         
-    <tr v-for="todo in todos" :key="todo.idEmpleado">
+    <tr v-for="todo in todos" :key="todo.id">
         
-        <td bgcolor="82E0AA" > {{todo.idEmpleado}}
+        <td bgcolor="82E0AA" > {{todo.id}}
         </td>
          <td bgcolor="#C5C3C3">{{todo.nombre}}
         </td>
@@ -67,7 +67,7 @@
 
         <div class="tres">
         <td>
-        <button class="btn" @click="deleteEmpleado(todo.idEmpleado)">Borrar</button>
+        <button class="btn" @click="deleteEmpleado(todo.id)">Borrar</button>
         </td>
         </div>
             </tr>
@@ -117,7 +117,7 @@ export default {
         },
         getTodos(){
             axios 
-            .get('http://localhost:3000/prueba',{
+            .get('http://localhost:3000/empleados',{
             })
             .then(response => {
                 // eslint-disable-next-line 

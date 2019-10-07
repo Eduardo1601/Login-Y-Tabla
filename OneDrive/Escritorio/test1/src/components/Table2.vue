@@ -20,7 +20,6 @@
           <li><a></a></li>
               <li><a></a></li>
               <div>
-          <button  class="celula" @click="Refrescar()">Refrescar</button>
           <button  class="celula" @click="regresar()">Regresar</button>
           </div>
     </th>
@@ -28,6 +27,7 @@
        </div>
     </div>
     </div>
+    <h1>Empleados</h1>
 <table border="1" align="center"  bordercolor="6F6F6F" cellspacing="0">
     <th class="volor" width="150" height="30" bgcolor="82E0AA">
         idSolicitud
@@ -49,13 +49,13 @@
         </th>
 
         
-    <tr v-for="todo in todos" :key="todo.idSolicitud">
+    <tr v-for="todo in todos" :key="todo.id">
         
-        <td bgcolor="82E0AA" > {{todo.idSolicitud}}
+        <td bgcolor="82E0AA" > {{todo.id}}
         </td>
-         <td bgcolor="#C5C3C3">{{todo.nombre}}
+         <td bgcolor="#C5C3C3">{{todo.empleado.nombre}}
         </td>
-        <td bgcolor="#C5C3C3">{{todo.apellido}}
+        <td bgcolor="#C5C3C3">{{todo.empleado.apellido}}
         </td>
         <td bgcolor="#C5C3C3">{{date(todo.fecha)}}
         </td>
@@ -64,7 +64,13 @@
         <td bgcolor="#C5C3C3">{{todo.status}}
         </td>
         <td>
-        <button class="btn" @click="deleteSolicitud(todo.idSolicitud)">Borrar</button>
+        <button class="btn" @click="deleteSolicitud(todo.id)">Borrar</button>
+        </td>
+        <td>
+        <button class="btn" @click="aceptar(todo.id)">Aceptar</button>
+        </td>
+        <td>
+        <button class="btn" @click="rechazar(todo.id)">Rechazar</button>
         </td>
  </tr>
      </table>
@@ -97,9 +103,6 @@ export default {
             })
             // eslint-disable-next-line 
             .catch(e=> console.log(e))
-        },
-        Refrescar(){
-           this.getTodos();
         },
         regresar(){
             this.$emit("regresar");
