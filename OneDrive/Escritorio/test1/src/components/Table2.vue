@@ -67,10 +67,10 @@
         <button class="btn" @click="deleteSolicitud(todo.id)">Borrar</button>
         </td>
         <td>
-        <button class="btn" @click="aceptar(todo.id)">Aceptar</button>
+        <button class="btn" @click="aceptar(todo.id)" v-if="todo.status=='pendiente'">Aceptar</button>
         </td>
         <td>
-        <button class="btn" @click="rechazar(todo.id)">Rechazar</button>
+        <button class="btn" @click="rechazar(todo.id)" v-if="todo.status=='pendiente'">Rechazar</button>
         </td>
  </tr>
      </table>
@@ -84,8 +84,10 @@ export default {
     name: 'Table2',
     data(){
         return{
+          id:"",
             todos:null,
-            status:0
+            status:0,
+            boton:0
         }
     },
     mounted (){
@@ -125,7 +127,40 @@ export default {
         },
         agregado(){
             this.status=1        
-        }        
+        },
+        aceptar(id){
+          const config = { headers: {'Content-Type': 'application/json'} };
+          axios.post('http://localhost:3000/estado/'+id,{
+            status:"aceptado"
+            })
+            .then(response => {
+               // this.getTodos()
+               // eslint-disable-next-line
+               this.getTodos();
+                console.log(response.data)
+                this.boton=1
+                this.$emit("aceptar");
+            }).catch(e => {
+                // eslint-disable-next-line 
+                console.log(e)
+            })
+        },
+        rechazar(id){
+          axios.post('http://localhost:3000/estado/'+id,{
+            status:"rechazado"
+            })
+            .then(response => {
+               // this.getTodos()
+               // eslint-disable-next-line
+               this.getTodos()
+                console.log(response.data)
+                this.boton=1
+                this.$emit("aceptar");
+            }).catch(e => {
+                // eslint-disable-next-line 
+                console.log(e)
+            })
+        }      
     }
  }
 </script>
