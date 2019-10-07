@@ -6,7 +6,6 @@
 </body>
    </html>
 <template>
-<h1>Login</h1>
   <div id="login">
   <div class="divlogin">
         <div class="container">
@@ -68,7 +67,7 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-html,body{ background: white; padding: 0px; margin: 0px; width: 100%; height: 100vh; font-family: "Roboto"; color:#333;  }
+html,body{ background: white; padding: 0px; margin: 0px; width: 100%; height: 100vh; font-family: "Roboto"; color:black;  }
 .divlogin{ 
   background:white ;
     background-size: cover; 
@@ -85,21 +84,21 @@ html,body{ background: white; padding: 0px; margin: 0px; width: 100%; height: 10
 }
 .divlogin .container .divcont{
     width: 100%;
-    max-width: 300px;
+    max-width: 10%;
     background: #black;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 5%;
+    border-radius: 5%;
     display: inline-block;
 }
 .divlogin .container .divcont h3{
     margin-top: 0px;
 }
 .divlogin .container .divcont input{ 
-    height: 30px; 
+    height: 15%; 
     margin: 0px; 
     border: 0px; 
     outline: none; 
-    padding: 10px; 
+    padding: 10%; 
     border-radius: 5px; 
     width: 90%;
     margin-bottom: 10px;

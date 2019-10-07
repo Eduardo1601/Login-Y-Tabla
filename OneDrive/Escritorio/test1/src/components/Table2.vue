@@ -1,5 +1,6 @@
 <template>
     <div>
+      <h1>SOLICITUDES</h1>
     <div class="dis">
     <div class="login">
        <div class="tainer">
@@ -27,7 +28,6 @@
        </div>
     </div>
     </div>
-    <h1>Empleados</h1>
 <table border="1" align="center"  bordercolor="6F6F6F" cellspacing="0">
     <th class="volor" width="150" height="30" bgcolor="82E0AA">
         idSolicitud

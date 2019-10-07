@@ -1,12 +1,7 @@
-<html>
-<body>
-<p>
-<img src="/assets/{{Esource.png}}" class="img-responsive" height="70" width="90">
-</p>
-</body>
-</html>
+
 <template>
 <div>
+  <h1>EMPLEADOS</h1>
        <div class="dis">
        <div class="login">
        <div class="tainer">
@@ -15,10 +10,11 @@
        <table>
        <div>
        </div>
+       <button class="diez" @click="logout()">Logout</button>
          <button class="catorce" @click="nuevo()">Agregar Empleado</button>    
-         <button class="quince" @click="tablas()"> Ver Tabla de Solicitudes </button>
-    <button class="nueve" @click="aceptar()">Solicitud</button>
-    <button class="diez" @click="logout()">Logout</button>
+         <button class="quince" @click="tablas()">Solicitudes </button>
+    <button class="nueve" @click="aceptar()">Hacer una solicitud</button>
+    
     
     </table>
     </div>
@@ -26,7 +22,6 @@
     </div>
     <br>
     <br>
-    <h1>Empleados</h1>
 <table class="Hehe" border="1" align="center"  bordercolor="6F6F6F" cellspacing="0">
     <th class="volor" width="150" height="30" bgcolor="82E0AA">
         IdEmpleado
@@ -231,7 +226,7 @@ align:center;
 
 .dis{
 
- width: 200%;
+ width: 100%;
     max-width: 1300px;
     background:#;
     padding: 10px;
@@ -247,6 +242,9 @@ align:center;
 
 }
 
+.h1{
+  font-family:Verdana;
+}
 
 .login .tainer .cont input.error, {    
     padding: 5px 6px;
@@ -268,7 +266,7 @@ td, th, table{
     border-radius: 5px;
   text-align: center;
   font-family: Tahoma;
-  font-size: 27px;
+  font-size: 100%;
 }
 
 tr:nth-child(even),{
