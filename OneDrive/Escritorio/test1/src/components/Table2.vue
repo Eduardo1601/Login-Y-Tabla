@@ -7,19 +7,6 @@
        <div class="veinte">
      <table>
           <th>
-          <li><a></a></li>
-          <li><a></a></li>
-          <li><a></a></li>
-                 <li><a></a></li>
-          <li><a></a></li>
-                    <li><a></a></li>
-                    <li><a></a></li>
-           <li><a></a></li>
-          <li><a></a></li>
-          <li><a></a></li>
-          <li><a></a></li>
-          <li><a></a></li>
-              <li><a></a></li>
               <div>
           <button  class="celula" @click="regresar()">Regresar</button>
           </div>
