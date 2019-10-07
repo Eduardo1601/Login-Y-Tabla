@@ -26,7 +26,6 @@
     </div>
     <br>
     <br>
-    <h1>Empleados</h1>
 <table class="Hehe" border="1" align="center"  bordercolor="6F6F6F" cellspacing="0">
     <th class="volor" width="150" height="30" bgcolor="82E0AA">
         IdEmpleado

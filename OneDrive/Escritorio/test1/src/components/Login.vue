@@ -6,7 +6,6 @@
 </body>
    </html>
 <template>
-<h1>Login</h1>
   <div id="login">
   <div class="divlogin">
         <div class="container">
